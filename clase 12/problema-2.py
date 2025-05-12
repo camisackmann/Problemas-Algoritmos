@@ -1,6 +1,24 @@
 from collections import defaultdict
 
 def max_palindrome_beauty(k, n, presents):
+    regalos = {}
+    for i in presents:
+        if i[0] not in regalos:
+            regalos[i[0]] = i[1]
+        
+        if regalos[i[0]] < i[1]:
+            regalos[i[0]] = i[1]
+    # print(regalos)
+    max_palindromo = 0
+    for key in regalos:
+        if regalos[key] > 0:
+            if key == key[::-1]:
+                max_palindromo += regalos[key]
+            elif key[::-1] in regalos:
+                max_palindromo += ((regalos[key] + regalos[key[::-1]])/2)
+    
+    return max_palindromo
+
 
 
 # --- Test unitarios ---

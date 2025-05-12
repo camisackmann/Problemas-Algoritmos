@@ -5,6 +5,18 @@ from collections import defaultdict
 # m número total de amistades
 def count_double_profiles(n, m, friendships):
     # todo
+    dic_amigos = {}
+    for i in range(1, n+1):
+        if i not in dic_amigos:
+            dic_amigos[i] = []
+
+    for a, b in friendships:
+        dic_amigos[a].append(b)
+        dic_amigos[b].append(a)
+    
+    duplicados = ([],0)*m
+
+#x = {'1':[2,3,4,5], '2':[1], '3':[1], '4': [1], '5': [1] }
 
 
 class TestDoubleProfiles(unittest.TestCase):
