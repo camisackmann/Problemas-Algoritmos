@@ -1,6 +1,16 @@
 from collections import defaultdict
 
 def max_palindrome_beauty(k, n, presents):
+    
+    beauty_mapped_by_present = {}
+    
+    for present, beauty in presents: 
+        previous_beauty = beauty_mapped_by_present.get(present)
+        if(previous_beauty>beauty):
+            continue
+        beauty_mapped_by_present.set(present, beauty)
+        
+    
 
 
 # --- Test unitarios ---
@@ -22,7 +32,7 @@ class TestMaxPalindromeBeauty(unittest.TestCase):
 
     def test_case_4(self):
         presents = [("madam", 3), ("madam", 5), ("hello", -10)]
-        self.assertEqual(max_palindrome_beauty(3, 5, presents), 5)  # "madam" tiene belleza 5
+        self.assertEqual(max_palindrome_beauty(3, 5, presents), 8)  # "madam" tiene belleza 5
 
     def test_case_5(self):
         presents = [("a", 10), ("a", -3)]
