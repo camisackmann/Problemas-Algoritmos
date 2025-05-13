@@ -2,15 +2,6 @@ from collections import defaultdict
 
 def max_palindrome_beauty(k, n, presents):
     
-    beauty_mapped_by_present = {}
-    
-    for present, beauty in presents: 
-        previous_beauty = beauty_mapped_by_present.get(present)
-        if(previous_beauty>beauty):
-            continue
-        beauty_mapped_by_present.set(present, beauty)
-        
-    
 
 
 # --- Test unitarios ---
