@@ -1,7 +1,22 @@
 import unittest
 
 def find_content_children(greed, cookies):
-
+    greed.sort()
+    cookies.sort()
+    
+    cookieIndex = 0
+    childIndex = 0
+    
+    amountOfCookies = len(cookies)
+    amountOfChildren = len(greed)
+    
+    while childIndex < amountOfChildren and cookieIndex < amountOfCookies:
+        child = greed[childIndex]
+        cookie = cookies[cookieIndex]
+        if(child <= cookie): 
+            childIndex += 1
+        cookieIndex += 1
+    return childIndex
 
 
 
