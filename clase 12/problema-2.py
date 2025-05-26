@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 def max_palindrome_beauty(k, n, presents):
+<<<<<<< HEAD
     regalos = {}
     for i in presents:
         if i[0] not in regalos:
@@ -19,6 +20,9 @@ def max_palindrome_beauty(k, n, presents):
     
     return max_palindromo
 
+=======
+    
+>>>>>>> 4db42ed13c292a6c19dc80c0ce8bf55591f3eb93
 
 
 # --- Test unitarios ---
@@ -40,7 +44,7 @@ class TestMaxPalindromeBeauty(unittest.TestCase):
 
     def test_case_4(self):
         presents = [("madam", 3), ("madam", 5), ("hello", -10)]
-        self.assertEqual(max_palindrome_beauty(3, 5, presents), 5)  # "madam" tiene belleza 5
+        self.assertEqual(max_palindrome_beauty(3, 5, presents), 8)  # "madam" tiene belleza 5
 
     def test_case_5(self):
         presents = [("a", 10), ("a", -3)]
